@@ -8,8 +8,8 @@ This is a solution to the [Huddle landing page with single introductory section 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Kelf1729/Front_Mentor_HuddlePage.git]
+- Live Site URL: [https://kelf1729.github.io/Front_Mentor_HuddlePage/]
 
 ### Built with
 
