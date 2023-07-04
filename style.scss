@@ -10,57 +10,81 @@ img {
 // Colors
 $primary-color0: hsl(257, 40%, 49%);
 $primary-color1: hsl(300, 69%, 71%);
+// Device
+$m-device: 376px;
+@mixin d($size) {
+  @if $size == m {
+    @media screen and (max-width: $m-device) {
+      @content;
+    }
+  }
+}
 // Geral
 body {
   background-image: url(./images/bg-desktop.svg);
   background-color: $primary-color0;
   display: grid;
+  flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-header {
-  width: 1000px;
-  margin-bottom: 50px;
-}
-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 1000px;
-  gap: 20px;
-  .information {
-    h1,
-    p {
+  min-height: 100vh;
+  @include d(m) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  header,
+  footer {
+    display: grid;
+    grid-template-columns: minmax(350px, 1000px);
+  }
+  header {
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    gap: 20px;
+    @include d(m) {
+      grid-template-columns: 350px;
+    }
+    h1 {
       color: white;
       font-family: "Poppins";
+      font-weight: 600;
       margin-bottom: 10px;
+      @include d(m) {
+        text-align: center;
+        line-height: 1.25;
+      }
     }
-  }
-  button {
-    background-color: white;
-    padding: 15px 60px;
-    border: none;
-    border-radius: 40px;
-    color: $primary-color0;
-    font-family: "Poppins";
-    font-weight: 600;
-    &:hover {
-      background-color: $primary-color1;
+    p {
       color: white;
+      font-family: "Open Sans";
+      line-height: 2;
+      font-weight: 400;
+      margin-bottom: 15px;
+      @include d(m) {
+        text-align: center;
+        line-height: 1.5;
+      }
+    }
+    button {
+      color: $primary-color0;
+      font-family: "Poppins";
+      font-weight: 600;
+      padding: 15px 60px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 3px 2px black;
+      &:hover {
+        color: white;
+        background-color: $primary-color1;
+      }
     }
   }
 }
 footer {
-  width: 1000px;
-  margin-top: 50px;
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
   img {
-    width: 30px;
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 50%;
+    max-height: 40px;
   }
 }
