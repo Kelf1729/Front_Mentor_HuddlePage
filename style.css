@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 img {
@@ -18,12 +19,11 @@ body {
 }
 @media screen and (max-width: 376px) {
   body {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }
-body header,
-body footer {
+body header {
   display: grid;
   grid-template-columns: minmax(350px, 1000px);
 }
@@ -74,14 +74,35 @@ body main button {
   border: none;
   border-radius: 20px;
   box-shadow: 3px 2px black;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 376px) {
+  body main button {
+    margin-left: 90px;
+  }
 }
 body main button:hover {
   color: white;
   background-color: hsl(300, 69%, 71%);
 }
 
+footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+@media screen and (max-width: 376px) {
+  footer {
+    max-width: 350px;
+    justify-content: center;
+  }
+}
 footer img {
   max-height: 40px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
